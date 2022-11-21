@@ -1,29 +1,55 @@
-#include <iostream>
 #include "Persona.h"
-#include "Crucero.h"
-#include "Reservacion.h"
-#include "AnthemOfTheSeas.h"
-#include "SymphonyOfTheSeas.h"
 
-using namespace std;
-
-int main()
+Persona::Persona()
 {
-    Persona pasajero;
-    cout<<pasajero.mostrarInfoPersona(pasajero)<<endl;
-
-    Crucero datosCrucero;
-    cout<<datosCrucero.mostrarInfoCrucero(datosCrucero)<<endl;
-
-    Reservacion datosReservacion;
-    cout<<datosReservacion.mostrarInfoReservacion(datosReservacion)<<endl;
-
-    AnthemOfTheSeas barco1;
-    cout<<barco1.mostrarInfoAnthem(barco1)<<endl;
-
-    SymphonyOfTheSeas barco2;
-    cout<<barco2.mostrarInfoSymphony(barco2)<<endl;
-
-    return 0;
+    nombre = "Paola";
+    edad = "21";
+    ciudadania = "Mexicana";
+    contacto = "pm.garridoo@gmail.com";
+    pasaporte = "G22394144";
 }
 
+void Persona::setNombre(string _nombre){
+    nombre = _nombre;
+}
+
+string Persona::getNombre(){
+    return nombre;
+}
+
+void Persona::setEdad(string _edad){
+    edad = _edad;
+}
+
+string Persona::getEdad(){
+    return edad;
+}
+
+void Persona::setCiudadania(string _ciudadania){
+    ciudadania = _ciudadania;
+}
+
+string Persona::getCiudadania(){
+    return ciudadania;
+}
+
+void Persona::setContacto(string _contacto){
+    contacto = _contacto;
+}
+
+string Persona::getContacto(){
+    return contacto;
+}
+
+void Persona::setPasaporte(string _pasaporte){
+    contacto = _pasaporte;
+}
+
+string Persona::getPasaporte(){
+    return pasaporte;
+}
+
+string Persona::mostrarInfoPersona(Persona pasajero){
+    string info_p = "Informacion del pasajero\nNombre: "+pasajero.getNombre()+"\nEdad: "+pasajero.getEdad()+"\nCiudadania: "+pasajero.getCiudadania()+"\nContacto: "+pasajero.getContacto()+"\nPasaporte: "+pasajero.getPasaporte();
+    return info_p;
+}
