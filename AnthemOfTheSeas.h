@@ -1,38 +1,23 @@
-#include "Reservacion.h"
+#include <iostream>
+using namespace std;
 
-Reservacion::Reservacion()
+#include <string>
+
+class AnthemOfTheSeas
 {
-    fecha = "8/Julio/2023 - 15/Julio/2023";
-    reserva = 123456789;
-    costoTotal = 800;
-}
+    private:
+        string RipcordIFLY;
+        string BumperCars;
+        string NorthStar;
 
-void Reservacion::setFecha(string _fecha){
-    fecha = _fecha;
-}
+    public:
+        AnthemOfTheSeas();
+        void setRipcordIFLY(string);
+        string getRipcordIFLY();
+        void setBumperCars(string);
+        string getBumperCars();
+        void setNorthStar(string);
+        string getNorthStar();
+        string mostrarInfoAnthem(AnthemOfTheSeas);
 
-string Reservacion::getFecha(){
-    return fecha;
-}
-
-void Reservacion::setReserva(int _reserva){
-    reserva = _reserva;
-}
-
-int Reservacion::getReserva(){
-    return reserva;
-}
-
-void Reservacion::setCostoTotal(int _costoTotal){
-    costoTotal = _costoTotal;
-}
-
-int Reservacion::getCostoTotal(){
-    return costoTotal;
-}
-
-
-string Reservacion::mostrarInfoReservacion(Reservacion datosReservacion){
-    string info = "\nInformacion de Reservacion\nFecha: " + getFecha();
-    return info;
-}
+};
