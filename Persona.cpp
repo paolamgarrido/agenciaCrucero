@@ -1,12 +1,26 @@
 #include "Persona.h"
 
+//Inicializar metodos
+
+//Constructor
 Persona::Persona()
 {
-    nombre = "Paola";
-    edad = "21";
-    ciudadania = "Mexicana";
-    contacto = "pm.garridoo@gmail.com";
-    pasaporte = "G22394144";
+
+}
+
+Persona::Persona(string _nombre, string _edad, string _ciudadania, string _email, string _pasaporte)
+{
+    nombre = _nombre;
+    edad = _edad;
+    ciudadania = _ciudadania;
+    email = _email;
+    pasaporte = _pasaporte;
+
+}
+
+Persona::~Persona()
+{
+    //dtor
 }
 
 void Persona::setNombre(string _nombre){
@@ -33,23 +47,27 @@ string Persona::getCiudadania(){
     return ciudadania;
 }
 
-void Persona::setContacto(string _contacto){
-    contacto = _contacto;
+void Persona::setEmail(string _email){
+    email = _email;
 }
 
-string Persona::getContacto(){
-    return contacto;
+string Persona::getEmail(){
+    return email;
 }
 
 void Persona::setPasaporte(string _pasaporte){
-    contacto = _pasaporte;
+    pasaporte = _pasaporte;
 }
 
 string Persona::getPasaporte(){
     return pasaporte;
 }
 
-string Persona::mostrarInfoPersona(Persona pasajero){
-    string info_p = "Informacion del pasajero\nNombre: "+pasajero.getNombre()+"\nEdad: "+pasajero.getEdad()+"\nCiudadania: "+pasajero.getCiudadania()+"\nContacto: "+pasajero.getContacto()+"\nPasaporte: "+pasajero.getPasaporte();
-    return info_p;
+//Muestra todos los datos declarados de la persona.
+void Persona::mostrarInfoPasajero(){
+    cout<<"Nombre: "<<nombre<<endl;
+    cout<<"Edad: "<<edad<<endl;
+    cout<<"Ciudadania: "<<ciudadania<<endl;
+    cout<<"Email: "<<email<<endl;
+    cout<<"Pasaporte: "<<pasaporte<<endl;
 }
