@@ -28,8 +28,6 @@ class CruceroMediterranean : public Crucero
         string BumperCars;
         string Ripcord;
         string NorthStar;
-
-
 };
 
 #endif // CRUCEROMEDITERRANEAN_H
