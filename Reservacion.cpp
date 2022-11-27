@@ -1,38 +1,74 @@
 #include "Reservacion.h"
 
+//Inicializar metodos
+
+//Constructor
 Reservacion::Reservacion()
 {
-    fecha = "8/Julio/2023 - 15/Julio/2023";
-    reserva = 123456789;
-    costoTotal = 800;
-}
 
-void Reservacion::setFecha(string _fecha){
-    fecha = _fecha;
-}
-
-string Reservacion::getFecha(){
-    return fecha;
-}
-
-void Reservacion::setReserva(int _reserva){
-    reserva = _reserva;
-}
-
-int Reservacion::getReserva(){
-    return reserva;
-}
-
-void Reservacion::setCostoTotal(int _costoTotal){
-    costoTotal = _costoTotal;
-}
-
-int Reservacion::getCostoTotal(){
-    return costoTotal;
 }
 
 
-string Reservacion::mostrarInfoReservacion(Reservacion datosReservacion){
-    string info = "\nInformacion de Reservacion\nFecha: " + getFecha();
-    return info;
+Reservacion::~Reservacion()
+{
+    //dtor
+}
+
+Reservacion::Reservacion(int _numReserva,string _nombreBarco,string _nombreReserva,string _nombreLinea,Persona _nombre,Crucero _linea)
+{
+    numReserva = _numReserva;
+    nombreBarco = _nombreBarco;
+    nombreReserva = _nombreReserva;
+    nombreLinea = _nombreLinea;
+    _nombre.getNombre();
+   _linea.getLineaCrucero();
+}
+
+void Reservacion::setNumReserva(int _numReserva){
+    numReserva = _numReserva;
+}
+
+int Reservacion::getNumReserva(){
+    return numReserva;
+}
+
+void Reservacion::setNomBarco(string _nombreBarco){
+    nombreBarco = _nombreBarco;
+}
+
+string Reservacion::getNomBarco(){
+    return nombreBarco;
+}
+
+void Reservacion::setNomReserva(string _nombreReserva){
+    nombreReserva = _nombreReserva;
+}
+
+string Reservacion::getNomReserva(){
+    return nombreReserva;
+}
+
+void Reservacion::setNomLinea(string _nombreLinea){
+    nombreLinea = _nombreLinea;
+}
+
+string Reservacion::getNomLinea(){
+    return nombreLinea;
+}
+
+//Metodos de composición
+void Reservacion::guardarNomReserva(Persona _nombre){
+    nombreReserva = _nombre.getNombre();
+}
+
+void Reservacion::guardarLineaCrucero(Crucero _linea){
+    nombreLinea = _linea.getLineaCrucero();
+}
+
+//Muestra todos los datos declarados de la reservación.
+void Reservacion::mostrarInfoReservacion(){
+    cout<<"Nombre de reserva: "<<nombreReserva<<endl;
+    cout<<"Numero de reserva: "<<numReserva<<endl;
+    cout<<"Linea Crucero: "<<nombreLinea<<endl;
+    cout<<"Barco: "<<nombreBarco<<endl;
 }
