@@ -1,36 +1,25 @@
 #include "Crucero.h"
 
+//Inicializar metodos
+
+//Constructor
 Crucero::Crucero()
 {
-    rutaViaje = "Puerto-Cape Liberty (New York),New Jersey  Destino-Southern Caribbean";
-    habitacion = "Ocean Room";
-    comida = "Internacional";
-    lineaCrucero = "Royal Caribbean";
-    costo = "750";
+
 }
 
-void Crucero::setRutaViaje(string _rutaViaje){
-    rutaViaje = _rutaViaje;
+Crucero::~Crucero()
+{
+    //dtor
 }
 
-string Crucero::getRutaViaje(){
-    return rutaViaje;
-}
-
-void Crucero::setHabitacion(string _habitacion){
+Crucero::Crucero(string _lineaCrucero,int _costo, string _rutaCrucero, string _fecha, string _habitacion)
+{
+    lineaCrucero = _lineaCrucero;
+    costo = _costo;
+    rutaCrucero = _rutaCrucero;
+    fecha = _fecha;
     habitacion = _habitacion;
-}
-
-string Crucero::getHabitacion(){
-    return habitacion;
-}
-
-void Crucero::setComida(string _comida){
-    comida = _comida;
-}
-
-string Crucero::getComida(){
-    return comida;
 }
 
 void Crucero::setLineaCrucero(string _lineaCrucero){
@@ -41,17 +30,43 @@ string Crucero::getLineaCrucero(){
     return lineaCrucero;
 }
 
-void Crucero::setCosto(string _costo){
+void Crucero::setRutaCrucero(string _rutaCrucero){
+    rutaCrucero = _rutaCrucero;
+}
+
+string Crucero::getRutaCrucero(){
+    return rutaCrucero;
+}
+
+void Crucero::setFecha(string _fecha){
+    fecha = _fecha;
+}
+
+string Crucero::getFecha(){
+    return fecha;
+}
+
+void Crucero::setHabitacion(string _habitacion){
+    habitacion = _habitacion;
+}
+
+string Crucero::getHabitacion(){
+    return habitacion;
+}
+
+void Crucero::setCosto(int _costo){
     costo = _costo;
 }
 
-string Crucero::getCosto(){
+int Crucero::getCosto(){
     return costo;
 }
 
-
-string Crucero::mostrarInfoCrucero(Crucero datosCrucero){
-    string info = "\nInformacion Crucero\nRuta: "+getRutaViaje()+"\nHabitación: "+getHabitacion()+"\nComida: "+getComida()+"\nLinea Crucero: "+getLineaCrucero()+"\nCosto: "+getCosto();
-    return info;
+//Muestra todos los datos declarados del crucero.
+void Crucero::mostrarCrucero(){
+    cout<<"Linea Crucero: "<<lineaCrucero<<endl;
+    cout<<"Habitacion: "<<habitacion<<endl;
+    cout<<"Ruta Crucero: "<<rutaCrucero<<endl;
+    cout<<"Salida: "<<fecha<<endl;
+    cout<<"Costo: "<<costo<<" USD"<<endl;
 }
-
