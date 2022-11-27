@@ -28,8 +28,6 @@ class CruceroCaribbean : public Crucero
         string PerfectStorm;
         string LaserTag;
         string FlowRider;
-
-
 };
 
 #endif // CRUCEROCARIBBEAN_H
